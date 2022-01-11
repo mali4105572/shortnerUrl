@@ -1,0 +1,32 @@
+<ng-container [ngSwitch]="columnValueTypes">
+
+      <span *ngSwitchCase="'date'" copyToClipboard [style.color]="color"
+            [innerText]="value | isDate | myDate: dateFormats.DDMMYYYY">
+      </span>
+
+      <span *ngSwitchCase="'date-time'" copyToClipboard [style.color]="color"
+            [innerText]="value | isDate | myDate: dateTimeFormats.DDMMYYYYHHmm ">
+      </span>
+
+      <span *ngSwitchCase="'number'" copyToClipboard [style.color]="color" [innerText]="value | phNumber">
+      </span>
+
+
+      <span *ngSwitchCase="'selection'" copyToClipboard [innerText]="value">
+      </span>
+      <span *ngSwitchCase="'count'" copyToClipboard [style.color]="color" [innerText]="value.length">
+      </span>
+
+      <span *ngSwitchCase="'timespan'" copyToClipboard [style.color]="color" [innerText]="value | timespan">
+      </span>
+
+      <span *ngSwitchCase="'price'" class="price" copyToClipboard [style.color]="color" [innerText]="value |phNumber">
+      </span>
+
+      <span *ngSwitchDefault [class.percentage]="columnValueTypes === ColumnValueTypes.percentage" [style.color]="color"
+            [innerText]="(value || '' )">
+      </span>
+
+</ng-container>
+
+<ng-content select="[display-end]"></ng-content>

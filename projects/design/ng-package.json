@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/design",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "core": "core",
+      "types": "types",
+      "@ngx-translate/core": "ngxCore",
+      "lodash": "_",
+      "moment": "moment",
+      "ngx-logger": "ngxLogger",
+      "primeng": "ContextMenu",
+      "primeng/toast": "primengToast",
+      "primeng/components/common/messageservice": "primengMessageService",
+      "primeng/components/table/table": "primengTable",
+      "primeng/components/utils/objectutils": "primengObjectUtils",
+      "primeng/api": "primengApi",
+      "primeng/primeng": "primeng"
+    }
+  }
+}

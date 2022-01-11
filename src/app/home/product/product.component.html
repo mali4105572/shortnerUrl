@@ -1,0 +1,24 @@
+<div>
+
+    <img [src]="product.Image" />
+    <br/>
+
+    <span [innerText]="'Title:   '"></span>
+    
+    <span [innerText]="product.Title"></span>
+    <br/>
+    <span [innerText]="'Desc:   '"></span>
+    
+    <span [innerText]="product.Description"></span>
+    <br/>
+    <span [innerText]="'Price:   '"></span>
+   
+    <span [innerText]="product.Price  | dolar"></span>
+
+    <br/>
+    <br/>
+
+    <button mat-raised-button [innerText]="'Buy'" (click)="Buy(product)"></button>
+
+
+</div>

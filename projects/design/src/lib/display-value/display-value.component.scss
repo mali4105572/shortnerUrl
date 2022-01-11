@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  max-width: 100%;
+   
+ 
+  span {
+    width: 100%; 
+    &.price  {
+     
+      &:after {
+        content: 'aaaa';
+        opacity: 0;
+      }
+    }
+
+    &.percentage:not(:empty) {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '%';
+        opacity: 0;
+      }
+    }
+
+    &:empty ::before {
+      content: "N\\A";
+      opacity: 0;
+    }
+  }
+
+  &.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &>div {
+    display: inline-block;
+    margin-left: auto;
+  }
+}

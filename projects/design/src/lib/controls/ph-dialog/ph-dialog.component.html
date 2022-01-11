@@ -1,0 +1,15 @@
+<p-dialog #dialog
+          [header]="header"
+          [(visible)]="visible"
+          [height]="height"
+          [width]="width"
+          [ngClass]="ngClass"
+          [resizable]="resizable"
+          (onHide)="hideHandler()"
+          (onShow)="showHandler()"
+          (onBeforeShow)="beforeShowHandler()">
+  <ng-content>
+
+  </ng-content>
+
+</p-dialog>

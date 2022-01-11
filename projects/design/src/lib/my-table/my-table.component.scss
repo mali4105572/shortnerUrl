@@ -1,0 +1,238 @@
+@import "../styles//elements.scss";
+
+@mixin table-header-design {
+
+     .ui-table  .ui-table-scrollable-wrapper {
+             .ui-table-scrollable-view { 
+
+                 .ui-table-scrollable-header {
+                    border:none;
+                 }
+           }
+     }
+    
+    .ui-table .ui-table-thead>tr {
+         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+         
+         >th {
+             background-color: $colorGreen;
+             padding: 0;
+    //         color: #1b1d1f;
+             border: 1px solid black;
+             font: 14px $fontRobotoBold;
+             outline: none;
+             user-select: none;
+
+         }
+    }
+    >table>thead>tr {
+        >th {
+            padding: 0 !important;
+            background-color:red;
+            &:focus {
+                Outline: none;
+            }
+
+            &div {
+                width: 100%;
+                display: flex;
+                padding-left: .5rem;
+
+                padding-right: .25rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                font: $fontSizeSmall $fontRobotoBold;
+                background: rgba(#d7e5ef, .3);
+
+                &span {
+                    flex: 1 1 auto;
+                    text-align: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    font: $fontSizeSmall $fontRobotoBold;
+                }
+
+                &>p-sorticon {
+                    flex: 0 0 auto;
+                    opacity: .3;
+                }
+
+                &:hover {
+                    background: #d7e5ef;
+                    color: black;
+
+                    &>p-sorticon {
+                        flex: 0 0 auto;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &ui-sortable-column.ui-state-highlight:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+@mixin table-body-design {
+    &>table {
+        display: flex;
+        flex-direction: column;
+
+        &>thead.ui-table-thead,
+        &>tbody.ui-table-tbody>tr {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            flex: 0 0 auto;
+
+        }
+
+        &>tbody.ui-table-tbody {
+
+            display: block;
+            width: 100%;
+            flex: 1 1 auto;
+            table-layout: fixed;
+            max-height: 100%;
+            background: red;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
+}
+
+lib-my-table {
+    flex: 1 1 auto;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+
+    @include table-header-design;
+    &,
+    p-table .ui-table,
+    .ui-table-wrapper,
+    table {
+        max-height: 100%;
+
+    }
+
+    ui-table-wrapper {
+        @include table-header-design;
+        @include table-body-design;
+    }
+
+    th{
+        div{
+            margin-right: 10px;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &.my-table-scrollab {
+        &>p-table {
+            display: flex;
+            flex-direction: column;
+
+            >.ui-table {
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+
+                >.ui-table-scrollable-wrapper {
+                    >.ui-table-scrollable-view {
+                        display: flex;
+                        flex-direction: column;
+
+                        >.ui-table-scrollable-header {
+                            flex: 0 0 auto;
+                            border: none;
+
+                            >.ui-table-scrollable-header-box {
+                                @include table-header-design;
+                            }
+                        }
+
+                        >.ui-table-scrollable-body {
+                            flex: 1 1 auto;
+
+                            >table {
+                                >tbody {
+                                    tr {
+                                        &:nth-child(even) {
+                                            background: #fafafb;
+                                        }
+
+                                        &:last-child {
+                                            >td {
+                                                border-bottom: solid 1px #c5c7d0
+                                            }
+                                        }
+
+                                        &.my-table-selected {
+                                            color: $colorYellow;
+                                            background: $colorYellow;
+
+                                            &:hover {
+                                                background: #6c98e1;
+                                            }
+                                        }
+
+                                        &:hover {
+                                            background: #f0f3f5;
+                                        }
+
+                                        >td {
+                                            &:first-child {
+                                                border-left: solid 1px #c5c7d0
+                                            }
+
+                                            border:none;
+                                            border-top: solid 1px #c5c7d0;
+                                            border-radius: solid 1px #c5c7d0;
+                                            font:$fontSizeSmall $fontRobotoRegular;
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &>.ui-table-scrollable-wrapper {
+                    flex: 1 1 auto;
+                    display: flex;
+                    @include table-body-design;
+                }
+            }
+        }
+    }
+}
+
+p-sorticon {
+    display: inline;
+}
+.ui-table .ui-table-tbody > tr > td{
+    border :1px solid $colorBlack;
+}
+ .ui-widget-header{
+    background: $colorYellow;
+    border:none;
+    font: 14px $fontRobotoRegular; 
+}
+tr.my-table-selectable {
+    cursor: pointer;
+
+    &.my-table-selected {
+        background: $colorYellow;
+    }
+}
+
+lib-ph-filter{
+    margin: 1rem;
+}

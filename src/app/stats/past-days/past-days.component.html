@@ -1,0 +1,11 @@
+<span>past 5 days</span>
+
+
+<div>
+    <div *ngFor="let pastDay of pastDays$ | async">
+        <span [innerText]="pastDay.Date"></span>
+        <span [innerText]="'  -  '"></span>
+        <span [innerHTML]="pastDay.Total | dolar"></span>
+        <br/>
+    </div>
+</div>

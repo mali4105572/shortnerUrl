@@ -1,0 +1,27 @@
+<p>admin</p>
+
+<!-- <lib-my-table [columns]="columns" [values]="customers$ | async" [totalRecords]="count$ | async"
+  [totalTitle]="'מספר לקוחות'" [contextMenu]="tableContextMenu" (onContextMenu)="onContextMenu($event)">>
+
+</lib-my-table> -->
+
+
+<button mat-raised-button [innerText]="'add'" (click)="add()"></button>
+
+
+
+<app-table></app-table>
+
+
+
+<!-- <lib-ph-dialog [header]="header" [(visible)]="nav.showAddDialog" [width]="modalWidth" [height]="modalHeight"
+  (onShow)="onShow()" (onHide)="onHide()" [resizable]="false" >
+  <app-product-form></app-product-form>
+</lib-ph-dialog>  -->
+
+
+<app-dialog-form [header]="header" [(visible)]="nav.showAddDialog" [width]="modalWidth" [height]="modalHeight"
+  (onShow)="onShow()" (onHide)="onHide()" [resizable]="false" >
+  <app-product-form [isEdit]="false"></app-product-form>
+</app-dialog-form> 
+     

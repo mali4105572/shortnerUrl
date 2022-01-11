@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Title",
+        "type": "string"
+    },
+    {
+        "name": "Price",
+        "type": "string"
+    },
+    {
+        "name": "Description",
+        "type": "string"
+    },
+    {
+        "name": "Image",
+        "type": "string"
+    }
+    
+]

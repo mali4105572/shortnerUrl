@@ -1,0 +1,9 @@
+<span>top 5 sel</span>
+<div>
+<div *ngFor="let top of topSel$ | async">
+    <span [innerText]="top.Title"></span>
+    <span [innerText]="'-'"></span>
+    <span [innerText]="top.Count"></span>
+    <br/>
+</div>
+</div>

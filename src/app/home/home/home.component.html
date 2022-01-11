@@ -1,0 +1,12 @@
+<p>home</p>
+
+
+<button mat-raised-button [innerText]="'shopping cart'" (click)="shoppingCart()"></button>
+<br/>
+<app-shopping-cart *ngIf="isClicked"></app-shopping-cart>
+<br/>
+
+<div *ngFor="let product of products$ | async" class="product">
+    <app-product [product]="product"></app-product>
+</div>
+

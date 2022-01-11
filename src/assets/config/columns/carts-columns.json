@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Title",
+        "type": "string"
+    },
+    {
+        "name": "Count",
+        "type": "string"
+    },
+    {
+        "name": "Price",
+        "type": "string"
+    }
+    
+]

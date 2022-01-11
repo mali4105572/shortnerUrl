@@ -1,0 +1,18 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/store",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@ngrx/effects": "ngrxEffects",
+      "@ngrx/store-devtools": "ngrxStoreDevtools",
+      "@ngrx/store": "ngrxStore",
+      "types": "types",
+      "api": "api",
+      "core": "core",
+      "primeng/api": "primengApi",
+      "moment": "moment",
+      "reduce-reducers": "reduceReducers"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div id="cart">
+    <div *ngFor="let elem of carts$ | async">
+        <span [innerText]="elem.Title"></span>
+        <span [innerText]="elem.Count"></span>
+        <span [innerText]="elem.Price | dolar" class="price"></span>
+    </div>
+    <br/>
+        <span [innerText]="'Total:   '"></span>
+        <span [innerText]="total$ | async  | dolar" class="price"></span>
+    <br/>
+    <button mat-raised-button [innerText]="'Pay'" (click)="Pay()"></button>
+</div>

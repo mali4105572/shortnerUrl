@@ -1,0 +1,13 @@
+
+
+
+<span>top 5 unique sel</span>
+
+<div>
+    <div *ngFor="let topUnique of topUniqueSel$ | async">
+        <span [innerText]="topUnique.Title"></span>
+        <span [innerText]="'-'"></span>
+        <span [innerText]="topUnique.Count"></span>
+        <br/>
+    </div>
+</div>

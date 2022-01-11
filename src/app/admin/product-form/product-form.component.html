@@ -1,0 +1,31 @@
+<form [formGroup]="formGroup">
+
+    <div>
+
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Title:" formControlName="Title" />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Price:" formControlName="Price" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Description:" formControlName="Description" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Image:" formControlName="Image" />
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button [innerText]="'save'" (click)="save()"></button>
+
+
+    </div>
+</form>

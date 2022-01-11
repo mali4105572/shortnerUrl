@@ -1,0 +1,12 @@
+{
+    "html": {
+        "wrap_attributes": "force-aligned",
+        "indent_size": 2
+    },
+    "ts": {
+        "indent_size": 2
+    },
+    "json": {
+        "indent_size": 2
+    }
+}
